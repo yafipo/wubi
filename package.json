@@ -1,0 +1,59 @@
+{
+  "name": "wubi",
+  "private": true,
+  "version": "0.1.0",
+  "main": "./dist/main.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "main": "vite build -c vite.main.ts --mode development && electron .",
+    "dist": "vite build -c vite.main.ts && pnpm build && electron-builder"
+  },
+  "dependencies": {
+    "@solidjs/router": "^0.15.3",
+    "bootstrap-icons": "^1.13.1",
+    "solid-js": "^1.9.9"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.1.14",
+    "@types/node": "^24.6.0",
+    "daisyui": "^5.1.29",
+    "electron": "^38.2.2",
+    "electron-builder": "^26.0.12",
+    "tailwindcss": "^4.1.14",
+    "typescript": "~5.9.3",
+    "vite": "^7.1.9",
+    "vite-plugin-solid": "^2.11.8"
+  },
+  "pnpm": {},
+  "build": {
+    "appId": "com.yafipo.wubi",
+    "productName": "Wubi",
+    "directories": {
+      "output": "out"
+    },
+    "mac": {
+      "category": "public.app-category.utilities",
+      "icon": "public/app-icon.png",
+      "target": "zip"
+    },
+    "linux": {
+      "category": "Education",
+      "icon": "public/logo.png"
+    },
+    "win": {
+      "icon": "public/logo.png"
+    },
+    "nsis": {
+      "oneClick": false
+    },
+    "files": [
+      "./public",
+      "./dist"
+    ],
+    "extraResources": [
+      "res"
+    ]
+  }
+}

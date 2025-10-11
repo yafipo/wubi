@@ -1,0 +1,6 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+.font-kai {
+  font-family: "楷体", "KaiTi", "STKaiti", serif;
+}
