@@ -22,9 +22,10 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Download chars
+        shell: bash
         run: |
           ZIP_URL="https://github.com/yafipo/wubi/releases/download/v0.0.0/chars.zip"
-          curl -L $ZIP_URL -o chars.zip
+          curl -L ${{ env.ZIP_URL }} -o chars.zip
           unzip chars.zip -d public
 
       - name: pnpm installation
