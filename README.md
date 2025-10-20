@@ -1,28 +1,13 @@
-## Usage
+## 五笔学习（86 版）
 
-```bash
-$ npm install # or pnpm install or yarn install
-```
+### 功能
 
-### Learn more on the [Solid Website](https://solidjs.com) and come chat with us on our [Discord](https://discord.com/invite/solidjs)
+- 反查
+- 字根表
+- 打字练习
 
-## Available Scripts
+### 截图
 
-In the project directory, you can run:
-
-### `npm run dev`
-
-Runs the app in the development mode.<br>
-Open [http://localhost:5173](http://localhost:5173) to view it in the browser.
-
-### `npm run build`
-
-Builds the app for production to the `dist` folder.<br>
-It correctly bundles Solid in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-## Deployment
-
-Learn more about deploying your application with the [documentations](https://vite.dev/guide/static-deploy.html)
+![](doc/assets/1.png)
+![](doc/assets/2.png)
+![](doc/assets/3.png)
