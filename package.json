@@ -26,7 +26,12 @@
     "vite": "^7.1.9",
     "vite-plugin-solid": "^2.11.8"
   },
-  "pnpm": {},
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "electron",
+      "esbuild"
+    ]
+  },
   "build": {
     "appId": "com.yafipo.wubi",
     "productName": "Wubi",
