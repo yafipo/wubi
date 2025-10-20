@@ -25,7 +25,7 @@ export function sendMessage<K extends keyof IpcMessage>(
   return new Promise((resolve, reject) => {
     function handler(_: IpcRendererEvent, res: ResponseData<IpcMessage[K][1]>) {
       if (res.id === id) {
-        console.log("IPC", "channel:", channel, "Req:", req, "Res:", res.data);
+        // console.log("IPC", "channel:", channel, "Req:", req, "Res:", res.data);
         if (res.err) {
           reject(res.err);
           setTimeout(() => alert(res.err), 0);

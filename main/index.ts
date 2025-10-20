@@ -3,11 +3,7 @@ import path from "path";
 import fs from "fs/promises";
 import "./ipc";
 import { setCTable } from "./core";
-
-const RES_DIR = path.resolve(
-  app.getAppPath(),
-  app.isPackaged ? "../res" : "res"
-);
+import { resolveResPath } from "./base";
 
 async function createWindow() {
   const win = new BrowserWindow({
@@ -30,7 +26,7 @@ async function createWindow() {
 app.whenReady().then(async () => {
   createWindow();
 
-  const data = await fs.readFile(path.resolve(RES_DIR, "data.csv"));
+  const data = await fs.readFile(resolveResPath("data.csv"));
   const t = data.toString().split("\n");
   setCTable(t);
 

@@ -4,12 +4,14 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import App from "./App";
 import Home from "./Home";
 import Zigen from "./Zigen";
+import Practice from "./Practice";
 
 render(
   () => (
     <HashRouter root={App}>
       <Route path="/" component={Home} />
       <Route path="/zigen" component={Zigen} />
+      <Route path="/practice" component={Practice} />
     </HashRouter>
   ),
   document.getElementById("root") as HTMLElement

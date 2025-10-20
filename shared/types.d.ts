@@ -17,4 +17,6 @@ type RR<Req, Res> = [Req, Res];
 
 type IpcMessage = {
   search: RR<string, string[]>;
+  tables: RR<void, string[]>;
+  table: RR<string, string[]>;
 };

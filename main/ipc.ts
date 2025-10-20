@@ -1,5 +1,8 @@
 import { IpcMainEvent, ipcMain } from "electron";
+import fs from "fs/promises";
 import { search } from "./core";
+import { resolveResPath } from "./base";
+import path from "path";
 
 function addAsyncListener<K extends keyof IpcMessage>(
   channel: K,
@@ -23,4 +26,16 @@ function addAsyncListener<K extends keyof IpcMessage>(
 
 addAsyncListener("search", async (req) => {
   return search(req);
+});
+
+addAsyncListener("tables", async (req) => {
+  const files = (await fs.readdir(resolveResPath("tables")))
+    .filter((item) => item.endsWith(".txt"))
+    .map((item) => item.slice(0, -4));
+  return files;
+});
+
+addAsyncListener("table", async (req) => {
+  const file = resolveResPath(`tables/${req}.txt`);
+  return (await fs.readFile(file)).toString().split("\n");
 });
